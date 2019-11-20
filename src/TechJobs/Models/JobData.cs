@@ -18,6 +18,7 @@ namespace TechJobs.Models
             return new List<Dictionary<string, string>>(AllJobs);
         }
 
+
         /*
          * Returns a list of all values contained in a given column,
          * without duplicates. 
@@ -89,6 +90,7 @@ namespace TechJobs.Models
 
             foreach (Dictionary<string, string> row in AllJobs)
             {
+
                 string aValue = row[column];
 
                 if (aValue.ToLower().Contains(value.ToLower()))

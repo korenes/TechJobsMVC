@@ -2,7 +2,10 @@
 
 <form action="/Search/Results">
     <h2>Search by:</h2>
-
+    @{
+        //Search Index.cshtml
+        //shows all five options with selecting buttons
+    }
     <p>
         @foreach (KeyValuePair<string, string> column in ViewBag.columns)
         {
@@ -34,18 +37,20 @@
 
     // TODO #2 - Loop over jobs dictionary and display all job fields
 
-    @foreach (Dictionary<string, string> item in ViewBag.jobs)
+
+    @foreach (Dictionary<string, string> job in ViewBag.jobs)
     {
-        <table>
-            @foreach (KeyValuePair<string, string> entry in item)
+        <table class="job-listing">
+            @foreach (KeyValuePair<string, string> jobPart in job)
             {
                 <tr>
-                    <td><strong>@entry.Key</strong></td>
-                    <td>@entry.Value</td>
+                    <td>@jobPart.Key</td>
+                    <td>@jobPart.Value</td>
                 </tr>
-
             }
         </table>
 
     }
+
 }
+
